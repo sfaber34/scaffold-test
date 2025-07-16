@@ -37,7 +37,7 @@ const config: HardhatUserConfig = {
       },
     ],
   },
-  defaultNetwork: "localhost",
+  defaultNetwork: "mainnet",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -52,9 +52,12 @@ const config: HardhatUserConfig = {
         url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
         enabled: process.env.MAINNET_FORKING_ENABLED === "true",
       },
+      loggingEnabled: true,
     },
     mainnet: {
-      url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
+      // url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
+      // url: `https://stage.rpc.buidlguidl.com:48544/`,
+      url: `https://mainnet.rpc.buidlguidl.com`,
       accounts: [deployerPrivateKey],
     },
     sepolia: {
